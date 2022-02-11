@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  
+  <body class="container">
+    <section class="one">
+    <button id="complimentButton">Get a compliment</button>
+    <button id="fortuneButton">Open fortune cookie</button>
+    </section>
+
+
+  
+    <section class="two">
+      <label>Edit Benchmark</label>
+      <select id="options">
+        <option value="">---Please choose an option---</option>
+        <option value="MAGIC">MAGIC</option>
+        <option value="DEI">DEI</option>
+        <option value="Attrition">Attrition</option>
+      </select>
+      <form>
+        <input type="text" id="bmToEdit" placeholder="paste new BM here">
+        <input type="radio" name="edit-type" value="edit" id="edit"/>
+        <label for="edit">Edit</label>
+
+        
+        <input type="radio" name="edit-type" value="delete" id="delete"/>
+        <label for="delete">Delete</label>
+      </form>
+      <p id="reportalSIDs">Sample 1</p>
+      <button id="submitBMButton">Submit</button>
+
+      <label>Paste SIDs from exportded data in the textbox below</label>
+      <textarea id="pastedSIDs" placeholder="paste SIDs here"></textarea>
+      <button id="submitSIDButton">Submit</button>
+
+      <label>Copy SIDs produced below</label>
+      <p id="reportalSIDs">Sample 2</p>
+    </section>
+
+    <section class="three"></section>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

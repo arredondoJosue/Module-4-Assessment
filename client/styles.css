@@ -1,0 +1,34 @@
+body {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    display:flex;
+    flex-direction:column;
+    padding: 15px;
+}
+
+.options {
+    padding: 10px;
+    width: 5px;
+}
+
+label {
+    padding: 10px;
+}
+
+textarea {
+    height: 75px;
+}
+
+#one {
+    padding: 5px;
+}
+
+#two {
+    padding: 5px;
+}

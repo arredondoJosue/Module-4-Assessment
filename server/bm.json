@@ -1,0 +1,14 @@
+[
+    {
+        "BMType": "MAGIC",
+        "SIDs": "S1"
+    },
+    {
+        "BMType": "DEI",
+        "SIDs": "S2"
+    },
+    {
+        "BMType": "Attrition",
+        "SIDs": "S3"
+    }
+]
