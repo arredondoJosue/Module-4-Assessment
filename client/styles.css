@@ -11,6 +11,11 @@ section {
     flex-direction:column;
     padding: 15px;
 }
+/* 
+#three {
+    inline-size: 350px;
+    overflow-wrap: break-word;
+} */
 
 .options {
     padding: 10px;

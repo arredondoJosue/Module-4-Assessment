@@ -32,21 +32,107 @@ module.exports = {
         res.status(200).send(randomFortune);
         
     }),
-    createSIDs: ("/api/raw", (req, res) => {
-        const MAGIC = ['S1','S2','S3']
-        const DEI = ['S4','S5','S6']
-        let {id, select, sids} = req.body
-        let newSubmit = {
-            id: globalID,
-            select,
-            sids
-        }
-        db.push(newSubmit)     
-        res.status(200).send(db);
-        globalID++
-    }),
     sendBM: ("/api/bm", (req, res) => {
         res.status(200).send(bm)
-    })
+    }),
+    editBM: ("/api/bm-edit", (req, res) => {
+        let x = req.body
+        // console.log(x);
+        // console.log('hit put server');
+
+        let {BMType, sids} = req.body
+
+        const update = {
+            BMType,
+            sids
+        }
+
+        console.log(update);
+
+        for(let i = 0; i < bm.length; i++){
+            // let {BMType, sids} = bm
+            // console.log(bm[i])
+            // console.log(update.BMType, '=?', bm[i].BMType)
+            
+
+            if(bm[i].BMType === update.BMType){
+                // console.log(bm[i].BMType)
+                // console.log(bm[i].SIDs)
+
+                let currentSIDs = bm[i].SIDs
+                // console.log(currentSIDs);
+                currentSIDs = update.sids
+                // console.log(currentSIDs);
+
+                bm[i].SIDs = update.sids
+                console.log(bm[i].SIDs)
+
+                // return console.log('success')
+            }else{
+                console.log('nope');
+            }
+        }
+
+        res.status(200).send(bm)
+    }),
+    deleteBM: ("/api/bm-delete", (req, res) => {
+        console.log('hit delete');
+
+        let {BMType} = req.body
+        let x = BMType
+
+        // const update = {
+        //     BMType
+        // }
+
+        console.log(BMType);
+
+        for(let i = 0; i < bm.length; i++){
+            // let {BMType, sids} = bm
+            // console.log(bm[i])
+            // console.log(update.BMType, '=?', bm[i].BMType)
+            
+
+            if(bm[i].BMType === BMType){
+                // console.log(bm[i].BMType)
+                // console.log(bm[i].SIDs)
+
+                // let currentSIDs = bm[i].SIDs
+                // console.log(currentSIDs);
+                // currentSIDs = update.sids
+                // console.log(currentSIDs);
+
+                bm[i].SIDs = null
+                console.log(bm[i].SIDs)
+                console.log(bm[i])
+                console.log(bm)
+                // return
+
+                // return console.log('success')
+            }else{
+                console.log('nope');
+            }
+        }
+
+        res.status(200).send(bm)
+    }),
+    createSIDs: ("/api/raw", (req, res) => {
+        const {sids} = req.body
+        console.log(sids);
+
+
+        let newSubmit = {
+            id: globalID,
+            sids: sids
+        }
+
+        db.push(newSubmit)
+        globalID++
+
+        console.log('hit createSIDs');
+
+        console.log(db);
+        res.status(200).send(db);
+    })    
 }
 

@@ -1,14 +1,14 @@
 [
     {
         "BMType": "MAGIC",
-        "SIDs": "S1"
+        "SIDs": "S1,S4,S5"
     },
     {
         "BMType": "DEI",
-        "SIDs": "S2"
+        "SIDs": "S2,S6,S7"
     },
     {
         "BMType": "Attrition",
-        "SIDs": "S3"
+        "SIDs": "S3,S8,S9"
     }
 ]
